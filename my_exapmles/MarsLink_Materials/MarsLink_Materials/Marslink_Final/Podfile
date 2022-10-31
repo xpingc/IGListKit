@@ -1,5 +1,5 @@
 target 'Marslink' do
   use_frameworks!
 
-  pod 'IGListKit', '~> 3.4.0'
+  pod 'IGListKit', '~> 4.0.0'
 end
