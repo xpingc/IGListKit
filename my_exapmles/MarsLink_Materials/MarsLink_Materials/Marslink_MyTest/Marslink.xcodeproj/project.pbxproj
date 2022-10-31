@@ -33,6 +33,23 @@
 		4E5F852CC0CB83A4C2F8AE7F /* Pods_Marslink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C715FCAFBD8A3010CBEC1EE4 /* Pods_Marslink.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		8E9304EA290F9A5800ACFB6A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8E9304E5290F9A5800ACFB6A /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B3C6C3E0B0FE2750FE588E0AFBA66D62;
+			remoteInfo = IGListKit;
+		};
+		8E9304EC290F9A5800ACFB6A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8E9304E5290F9A5800ACFB6A /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DE7A63AD4E6C2A7645EB2E2157EDAD05;
+			remoteInfo = "Pods-Marslink";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		2949EE881D8AB4F4005BC671 /* Marslink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Marslink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2997D4941DF5EA51005A5DD2 /* NSObject+ListDiffable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+ListDiffable.swift"; sourceTree = "<group>"; };
@@ -59,6 +76,7 @@
 		29E2CDD61DC7B4CF00A9E0F4 /* WeatherDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherDetailCell.swift; sourceTree = "<group>"; };
 		29E2CDD71DC7B4CF00A9E0F4 /* WeatherSummaryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherSummaryCell.swift; sourceTree = "<group>"; };
 		29E2CDF41DC7B4E300A9E0F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8E9304E5290F9A5800ACFB6A /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
 		B9EFE4AB43572E52A0685AB4 /* Pods-Marslink.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marslink.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Marslink/Pods-Marslink.debug.xcconfig"; sourceTree = "<group>"; };
 		C715FCAFBD8A3010CBEC1EE4 /* Pods_Marslink.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Marslink.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC3FA05C5618EC7BE0845CC7 /* Pods-Marslink.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marslink.release.xcconfig"; path = "Pods/Target Support Files/Pods-Marslink/Pods-Marslink.release.xcconfig"; sourceTree = "<group>"; };
@@ -79,6 +97,7 @@
 		2949EE7F1D8AB4F4005BC671 = {
 			isa = PBXGroup;
 			children = (
+				8E9304E5290F9A5800ACFB6A /* Pods.xcodeproj */,
 				2949EE8A1D8AB4F4005BC671 /* Marslink */,
 				2949EE891D8AB4F4005BC671 /* Products */,
 				4B97DC9A6339555F884CAC3C /* Pods */,
@@ -196,6 +215,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		8E9304E6290F9A5800ACFB6A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8E9304EB290F9A5800ACFB6A /* IGListKit */,
+				8E9304ED290F9A5800ACFB6A /* Pods-Marslink */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -240,18 +268,44 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
 			mainGroup = 2949EE7F1D8AB4F4005BC671;
 			productRefGroup = 2949EE891D8AB4F4005BC671 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 8E9304E6290F9A5800ACFB6A /* Products */;
+					ProjectRef = 8E9304E5290F9A5800ACFB6A /* Pods.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				2949EE871D8AB4F4005BC671 /* Marslink */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		8E9304EB290F9A5800ACFB6A /* IGListKit */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			name = IGListKit;
+			path = IGListKit.framework;
+			remoteRef = 8E9304EA290F9A5800ACFB6A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8E9304ED290F9A5800ACFB6A /* Pods-Marslink */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			name = "Pods-Marslink";
+			path = Pods_Marslink.framework;
+			remoteRef = 8E9304EC290F9A5800ACFB6A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		2949EE861D8AB4F4005BC671 /* Resources */ = {
