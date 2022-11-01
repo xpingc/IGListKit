@@ -31,15 +31,22 @@ import UIKit
 class PokemonCell: UICollectionViewCell {
   let label: UILabel = {
     let label = UILabel()
-    label.backgroundColor = .clear
+    label.backgroundColor = .white
     label.font = AppFont(size: 14)
     label.textColor = UIColor(hex6: 0x42c84b)
+    label.textAlignment = .center
     return label
+  }()
+  
+  let imageView: UIImageView = {
+    let imageView = UIImageView()
+    return imageView
   }()
   
   override init(frame: CGRect) {
     super.init(frame: frame)
     contentView.backgroundColor = UIColor(hex6: 0x0c1f3f)
+    contentView.addSubview(imageView)
     contentView.addSubview(label)
   }
   
@@ -50,6 +57,12 @@ class PokemonCell: UICollectionViewCell {
   override func layoutSubviews() {
     super.layoutSubviews()
     let padding = CommonInsets
-    label.frame = bounds.inset(by: UIEdgeInsets(top: 0, left: padding.left, bottom: 0, right: padding.right))
+    // label is always 100 * 30
+    let labelHeight = 24
+    let labelWidth = 100
+    let verticalInset = (Int(bounds.height) - labelHeight) / 2
+    let horizontalInset = (Int(bounds.width) - labelWidth) / 2
+    label.frame = bounds.inset(by: UIEdgeInsets(top: CGFloat(verticalInset), left: CGFloat(horizontalInset), bottom: CGFloat(verticalInset), right: CGFloat(horizontalInset)))
+    imageView.frame = bounds.inset(by: UIEdgeInsets(top: 0, left: padding.left, bottom: 0, right: padding.right))
   }
 }

@@ -56,20 +56,14 @@ extension PokemonSectionController {
     let width = context.containerSize.width as CGFloat
     let itemForEachRow: CGFloat = 3
     let itemSize = (width - (itemForEachRow - 1) * minimumInteritemSpacing) / itemForEachRow
-    return CGSize(width: itemSize, height: itemSize)
-    
-//    if index == 0 {
-//      let itemSize = width / 4
-//      return CGSize(width: itemSize, height: itemSize)
-//    } else {
-//      return JournalEntryCell.cellSize(width: width / 3, text: entry.text)
-//    }
+    return CGSize(width: itemSize, height: itemSize)    
   }
   
   override func cellForItem(at index: Int) -> UICollectionViewCell {
     let cell = collectionContext!.dequeueReusableCell(of: PokemonCell.self, for: self, at: index)
     if let cell = cell as? PokemonCell {
       cell.label.text = pokemonList.pokemons[index].name
+      cell.imageView.image = pokemonList.pokemons[index].image
     }
 
     return cell
