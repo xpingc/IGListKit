@@ -10,10 +10,18 @@ if test -d "/opt/homebrew/bin/"; then
   export PATH
 fi
 
+# NOTE: ~/homebrew/bin will not work
+# Adds support for Apple Silicon brew directory
+if test -d "$HOME/homebrew/bin"; then
+  PATH="$HOME/homebrew/bin:${PATH}"
+  export PATH
+fi
+
 VERSION="0.24.2"
 FOUND=$(swiftlint version)
 
 if which swiftlint >/dev/null; then
+    Echo "hello"
     swiftlint lint --config ../.swiftlint.yml
 else
     echo "
