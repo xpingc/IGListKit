@@ -26,56 +26,52 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 
-import UIKit
 import IGListKit
+import UIKit
 
-class PokemonViewController: UIViewController, ListAdapterDataSource {
-  func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
-    return loader.entries
+class PokemonSectionController: ListSectionController {
+  var entry: JournalEntry!
+  let solFormatter = SolFormatter()
+  
+  override init() {
+    super.init()
+    inset = UIEdgeInsets(top: 0, left: 0, bottom: 15, right: 0)
+  }
+}
+
+extension PokemonSectionController {
+  override func numberOfItems() -> Int {
+    return 2
   }
   
-  func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
-    return PokemonSectionController()
+  override func sizeForItem(at index: Int) -> CGSize {
+    guard let context = collectionContext,
+          let entry = entry
+    else {
+      return .zero
+    }
+    
+    let width = context.containerSize.width
+    if index == 0 {
+      return CGSize(width: width, height: 30)
+    } else {
+      return JournalEntryCell.cellSize(width: width, text: entry.text)
+    }
   }
   
-  func emptyView(for listAdapter: ListAdapter) -> UIView? {
-    return nil
+  override func cellForItem(at index: Int) -> UICollectionViewCell {
+    let cellClass: AnyClass = index == 0 ? JournalEntryDateCell.self : JournalEntryCell.self
+    let cell = collectionContext!.dequeueReusableCell(of: cellClass, for: self, at: index)
+    if let cell = cell as? JournalEntryDateCell {
+      cell.label.text = "SOL \(solFormatter.sols(fromDate: entry.date))"
+    } else if let cell = cell as? JournalEntryCell {
+      cell.label.text = entry.text
+    }
+    
+    return cell
   }
   
-  let loader = JournalEntryLoader()
-  let collectionView: UICollectionView = {
-    let view = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
-    view.backgroundColor = .systemBlue
-    // view.translatesAutoresizingMaskIntoConstraints = false
-    return view
-  }()
-  lazy var adapter: ListAdapter = {
-    return ListAdapter(updater: ListAdapterUpdater(), viewController: self, workingRangeSize: 0)
-  }()
-  override func viewDidLoad() {
-      super.viewDidLoad()
-
-      // Do any additional setup after loading the view.
-    loader.loadLatest();
-    view.addSubview(collectionView)
+  override func didUpdate(to object: Any) {
+    entry = object as? JournalEntry
   }
-  
-  override func viewDidLayoutSubviews() {
-    super.viewDidLayoutSubviews()
-    collectionView.frame = view.bounds
-    adapter.collectionView = collectionView
-    adapter.dataSource = self
-  }
-  
-
-  /*
-  // MARK: - Navigation
-
-  // In a storyboard-based application, you will often want to do a little preparation before navigation
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-      // Get the new view controller using segue.destination.
-      // Pass the selected object to the new view controller.
-  }
-  */
-
 }
