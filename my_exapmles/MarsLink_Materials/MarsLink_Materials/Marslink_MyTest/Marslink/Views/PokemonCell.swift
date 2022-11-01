@@ -26,56 +26,30 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 
-import IGListKit
 import UIKit
 
-class PokemonSectionController: ListSectionController {
-  var pokemonList: PokemonList!
-  let solFormatter = SolFormatter()
+class PokemonCell: UICollectionViewCell {
+  let label: UILabel = {
+    let label = UILabel()
+    label.backgroundColor = .clear
+    label.font = AppFont(size: 14)
+    label.textColor = UIColor(hex6: 0x42c84b)
+    return label
+  }()
   
-  override init() {
-    super.init()
-    self.minimumLineSpacing = 10
-    self.minimumInteritemSpacing = 10
-    inset = UIEdgeInsets(top: 0, left: 0, bottom: 30, right: 0)
-  }
-}
-
-extension PokemonSectionController {
-  override func numberOfItems() -> Int {
-    return pokemonList.pokemons.count
+  override init(frame: CGRect) {
+    super.init(frame: frame)
+    contentView.backgroundColor = UIColor(hex6: 0x0c1f3f)
+    contentView.addSubview(label)
   }
   
-  override func sizeForItem(at index: Int) -> CGSize {
-    guard let context = collectionContext,
-          let _ = pokemonList
-    else {
-      return .zero
-    }
-    
-    let width = context.containerSize.width as CGFloat
-    let itemForEachRow: CGFloat = 3
-    let itemSize = (width - (itemForEachRow - 1) * minimumInteritemSpacing) / itemForEachRow
-    return CGSize(width: itemSize, height: itemSize)
-    
-//    if index == 0 {
-//      let itemSize = width / 4
-//      return CGSize(width: itemSize, height: itemSize)
-//    } else {
-//      return JournalEntryCell.cellSize(width: width / 3, text: entry.text)
-//    }
+  required init?(coder aDecoder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
   }
   
-  override func cellForItem(at index: Int) -> UICollectionViewCell {
-    let cell = collectionContext!.dequeueReusableCell(of: PokemonCell.self, for: self, at: index)
-    if let cell = cell as? PokemonCell {
-      cell.label.text = pokemonList.pokemons[index].name
-    }
-
-    return cell
-  }
-  
-  override func didUpdate(to object: Any) {
-    pokemonList = object as? PokemonList
+  override func layoutSubviews() {
+    super.layoutSubviews()
+    let padding = CommonInsets
+    label.frame = bounds.inset(by: UIEdgeInsets(top: 0, left: padding.left, bottom: 0, right: padding.right))
   }
 }
