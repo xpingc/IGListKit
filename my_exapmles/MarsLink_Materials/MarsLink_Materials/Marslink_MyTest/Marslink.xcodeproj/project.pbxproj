@@ -54,6 +54,8 @@
 		8E93056D290FA59900ACFB6A /* PokemonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E93056C290FA59900ACFB6A /* PokemonViewController.swift */; };
 		8E93056F2910D94E00ACFB6A /* PokemonSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E93056E2910D94E00ACFB6A /* PokemonSectionController.swift */; };
 		8E9305722910E5DE00ACFB6A /* PokemonFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9305712910E5DE00ACFB6A /* PokemonFlowLayout.swift */; };
+		8ECD97C5291187A3008E3E1B /* PokemonEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECD97C4291187A3008E3E1B /* PokemonEntry.swift */; };
+		8ECD97C929118844008E3E1B /* PokemonLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECD97C829118844008E3E1B /* PokemonLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +125,8 @@
 		8E93056C290FA59900ACFB6A /* PokemonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonViewController.swift; sourceTree = "<group>"; };
 		8E93056E2910D94E00ACFB6A /* PokemonSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonSectionController.swift; sourceTree = "<group>"; };
 		8E9305712910E5DE00ACFB6A /* PokemonFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonFlowLayout.swift; sourceTree = "<group>"; };
+		8ECD97C4291187A3008E3E1B /* PokemonEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonEntry.swift; sourceTree = "<group>"; };
+		8ECD97C829118844008E3E1B /* PokemonLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonLoader.swift; sourceTree = "<group>"; };
 		B9EFE4AB43572E52A0685AB4 /* Pods-Marslink.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marslink.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Marslink/Pods-Marslink.debug.xcconfig"; sourceTree = "<group>"; };
 		C715FCAFBD8A3010CBEC1EE4 /* Pods_Marslink.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Marslink.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC3FA05C5618EC7BE0845CC7 /* Pods-Marslink.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marslink.release.xcconfig"; path = "Pods/Target Support Files/Pods-Marslink/Pods-Marslink.release.xcconfig"; sourceTree = "<group>"; };
@@ -184,6 +188,7 @@
 				29E2CDBD1DC7B4CF00A9E0F4 /* SolFormatter.swift */,
 				29E2CDBE1DC7B4CF00A9E0F4 /* User.swift */,
 				29E2CDBF1DC7B4CF00A9E0F4 /* Weather.swift */,
+				8ECD97C4291187A3008E3E1B /* PokemonEntry.swift */,
 			);
 			name = Models;
 			path = Marslink/Models;
@@ -219,6 +224,7 @@
 				29E2CDCB1DC7B4CF00A9E0F4 /* TextSize.swift */,
 				29E2CDCC1DC7B4CF00A9E0F4 /* Theme.swift */,
 				29E2CDCD1DC7B4CF00A9E0F4 /* WxScanner.swift */,
+				8ECD97C829118844008E3E1B /* PokemonLoader.swift */,
 			);
 			name = Systems;
 			path = Marslink/Systems;
@@ -477,6 +483,7 @@
 				2997D4951DF5EA51005A5DD2 /* NSObject+ListDiffable.swift in Sources */,
 				29E2CDDC1DC7B4CF00A9E0F4 /* Message.swift in Sources */,
 				29E2CDEA1DC7B4CF00A9E0F4 /* WxScanner.swift in Sources */,
+				8ECD97C5291187A3008E3E1B /* PokemonEntry.swift in Sources */,
 				29E2CDE71DC7B4CF00A9E0F4 /* Pathfinder.swift in Sources */,
 				29E2CDDE1DC7B4CF00A9E0F4 /* User.swift in Sources */,
 				29E2CDEE1DC7B4CF00A9E0F4 /* JournalEntryCell.swift in Sources */,
@@ -486,6 +493,7 @@
 				29E2CDED1DC7B4CF00A9E0F4 /* CustomNavigationBar.swift in Sources */,
 				8E9305722910E5DE00ACFB6A /* PokemonFlowLayout.swift in Sources */,
 				29E2CDDA1DC7B4CF00A9E0F4 /* DateSortable.swift in Sources */,
+				8ECD97C929118844008E3E1B /* PokemonLoader.swift in Sources */,
 				29E2CDDF1DC7B4CF00A9E0F4 /* Weather.swift in Sources */,
 				29E2CDE91DC7B4CF00A9E0F4 /* Theme.swift in Sources */,
 				8E93056D290FA59900ACFB6A /* PokemonViewController.swift in Sources */,

@@ -31,7 +31,7 @@ import IGListKit
 
 class PokemonViewController: UIViewController, ListAdapterDataSource {
   func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
-    return loader.entries
+    return [loader.pokemonList]
   }
   
   func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
@@ -42,7 +42,7 @@ class PokemonViewController: UIViewController, ListAdapterDataSource {
     return nil
   }
   
-  let loader = JournalEntryLoader()
+  let loader = PokemonEntryLoader()
   let collectionView: UICollectionView = {
 //    let layout = PokemonFlowLayout(        cellsPerRow: 3,
 //                                           minimumInteritemSpacing: 10,
@@ -58,9 +58,9 @@ class PokemonViewController: UIViewController, ListAdapterDataSource {
     return ListAdapter(updater: ListAdapterUpdater(), viewController: self, workingRangeSize: 0)
   }()
   override func viewDidLoad() {
-      super.viewDidLoad()
+    super.viewDidLoad()
 
-      // Do any additional setup after loading the view.
+    // Do any additional setup after loading the view.
     loader.loadLatest();
     view.addSubview(collectionView)
   }

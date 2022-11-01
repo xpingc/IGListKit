@@ -26,58 +26,20 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 
-import IGListKit
-import UIKit
+import Foundation
 
-class PokemonSectionController: ListSectionController {
-  var pokemonList: PokemonList!
-  let solFormatter = SolFormatter()
+class Pokemon: NSObject {
+  let name: String
   
-  override init() {
-    super.init()
-    self.minimumLineSpacing = 10
-    self.minimumInteritemSpacing = 10
-    inset = UIEdgeInsets(top: 0, left: 0, bottom: 30, right: 0)
+  init(name: String) {
+    self.name = name
   }
 }
 
-extension PokemonSectionController {
-  override func numberOfItems() -> Int {
-    return pokemonList.pokemons.count
-  }
+class PokemonList: NSObject {
+  let pokemons: [Pokemon]
   
-  override func sizeForItem(at index: Int) -> CGSize {
-    guard let context = collectionContext,
-          let _ = pokemonList
-    else {
-      return .zero
-    }
-    
-    let width = context.containerSize.width as CGFloat
-    let itemForEachRow: CGFloat = 4
-    let itemSize = (width - (itemForEachRow - 1) * minimumInteritemSpacing) / itemForEachRow
-    return CGSize(width: itemSize, height: itemSize)
-    
-//    if index == 0 {
-//      let itemSize = width / 4
-//      return CGSize(width: itemSize, height: itemSize)
-//    } else {
-//      return JournalEntryCell.cellSize(width: width / 3, text: entry.text)
-//    }
-  }
-  
-  override func cellForItem(at index: Int) -> UICollectionViewCell {
-    // let cellClass: AnyClass = index == 0 ? JournalEntryDateCell.self : JournalEntryCell.self
-    let cellClass: AnyClass = JournalEntryDateCell.self
-    let cell = collectionContext!.dequeueReusableCell(of: cellClass, for: self, at: index)
-    if let cell = cell as? JournalEntryDateCell {
-      cell.label.text = pokemonList.pokemons[index].name
-    }
-    
-    return cell
-  }
-  
-  override func didUpdate(to object: Any) {
-    pokemonList = object as? PokemonList
+  init(pokemons: [Pokemon]) {
+    self.pokemons = pokemons
   }
 }
