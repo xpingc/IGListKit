@@ -44,6 +44,11 @@ class PokemonViewController: UIViewController, ListAdapterDataSource {
   
   let loader = JournalEntryLoader()
   let collectionView: UICollectionView = {
+//    let layout = PokemonFlowLayout(        cellsPerRow: 3,
+//                                           minimumInteritemSpacing: 10,
+//                                           minimumLineSpacing: 10,
+//                                           sectionInset: UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10))
+    // let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
     let view = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
     view.backgroundColor = .systemBlue
     // view.translatesAutoresizingMaskIntoConstraints = false
