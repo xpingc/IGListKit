@@ -43,7 +43,7 @@ class PokemonSectionController: ListSectionController {
 
 extension PokemonSectionController {
   override func numberOfItems() -> Int {
-    return pokemonList.pokemons.count
+    return pokemonList.pokemons.count + 1
   }
   
   override func sizeForItem(at index: Int) -> CGSize {
@@ -52,18 +52,28 @@ extension PokemonSectionController {
     else {
       return .zero
     }
-    
+
     let width = context.containerSize.width as CGFloat
-    let itemForEachRow: CGFloat = 3
-    let itemSize = (width - (itemForEachRow - 1) * minimumInteritemSpacing) / itemForEachRow
-    return CGSize(width: itemSize, height: itemSize)    
+
+    if (index < pokemonList.pokemons.count) {
+      let itemForEachRow: CGFloat = 3
+      let itemSize = (width - (itemForEachRow - 1) * minimumInteritemSpacing) / itemForEachRow
+      return CGSize(width: itemSize, height: itemSize)
+    } else {
+      return CGSize(width: width, height: 100)
+    }
   }
   
   override func cellForItem(at index: Int) -> UICollectionViewCell {
     let cell = collectionContext!.dequeueReusableCell(of: PokemonCell.self, for: self, at: index)
     if let cell = cell as? PokemonCell {
-      cell.label.text = pokemonList.pokemons[index].name
-      cell.imageView.image = pokemonList.pokemons[index].image
+      if index < pokemonList.pokemons.count {
+        cell.label.text = pokemonList.pokemons[index].name
+        cell.imageView.image = pokemonList.pokemons[index].image
+      } else {
+        cell.label.text = "View More"
+        cell.imageView.isHidden = true
+      }
     }
 
     return cell
