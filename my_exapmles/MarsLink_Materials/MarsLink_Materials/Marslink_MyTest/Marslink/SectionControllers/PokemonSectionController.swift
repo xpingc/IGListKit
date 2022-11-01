@@ -43,6 +43,7 @@ class PokemonSectionController: ListSectionController {
 
 extension PokemonSectionController {
   override func numberOfItems() -> Int {
+    //return pokemonList.pokemons.count
     return pokemonList.pokemons.count + 1
   }
   

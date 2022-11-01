@@ -29,6 +29,39 @@
 import UIKit
 import IGListKit
 
+// From https://gist.github.com/vinczebalazs/e33679c312b4e7062be22c5d14f2d72c
+// From https://medium.com/@balzsvincze/left-aligned-uicollectionview-layout-1ff9a56562d0
+final class UICollectionViewLeftAlignedLayout: UICollectionViewFlowLayout {
+
+  private var layouts: [IndexPath: UICollectionViewLayoutAttributes] = [:]
+
+  override func prepare() {
+    super.prepare()
+    layouts = [:]
+  }
+
+  override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
+    var newAttributesArray = [UICollectionViewLayoutAttributes]()
+    let superAttributesArray = super.layoutAttributesForElements(in: rect)!
+    for (index, attributes) in superAttributesArray.enumerated() {
+      if index == 0 || superAttributesArray[index - 1].frame.origin.y != attributes.frame.origin.y {
+        attributes.frame.origin.x = sectionInset.left
+      } else {
+        let previousAttributes = superAttributesArray[index - 1]
+        let previousFrameRight = previousAttributes.frame.origin.x + previousAttributes.frame.width
+        attributes.frame.origin.x = previousFrameRight + minimumInteritemSpacing
+      }
+      newAttributesArray.append(attributes)
+    }
+    newAttributesArray.forEach { layouts[$0.indexPath] = $0 }
+    return newAttributesArray
+  }
+
+  override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+    layouts[indexPath]
+  }
+}
+
 class PokemonViewController: UIViewController, ListAdapterDataSource {
   func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
     return [loader.pokemonList]
@@ -49,7 +82,7 @@ class PokemonViewController: UIViewController, ListAdapterDataSource {
 //                                           minimumLineSpacing: 10,
 //                                           sectionInset: UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10))
     // let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
-    let view = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+    let view = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLeftAlignedLayout())
     view.backgroundColor = .systemBlue
     // view.translatesAutoresizingMaskIntoConstraints = false
     return view
