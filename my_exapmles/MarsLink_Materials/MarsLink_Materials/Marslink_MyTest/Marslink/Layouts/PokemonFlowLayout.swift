@@ -26,60 +26,36 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 
-import IGListKit
 import UIKit
 
-class PokemonSectionController: ListSectionController {
-  var entry: JournalEntry!
-  let solFormatter = SolFormatter()
-  
-  override init() {
-    super.init()
-    self.minimumLineSpacing = 10
-    self.minimumInteritemSpacing = 10
-    inset = UIEdgeInsets(top: 0, left: 0, bottom: 30, right: 0)
-  }
-}
+class PokemonFlowLayout: UICollectionViewFlowLayout {
+  let cellsPerRow: Int
 
-extension PokemonSectionController {
-  override func numberOfItems() -> Int {
-    return 7
+  init(cellsPerRow: Int, minimumInteritemSpacing: CGFloat = 0, minimumLineSpacing: CGFloat = 0, sectionInset: UIEdgeInsets = .zero) {
+      self.cellsPerRow = cellsPerRow
+      super.init()
+
+      self.minimumInteritemSpacing = minimumInteritemSpacing
+      self.minimumLineSpacing = minimumLineSpacing
+      self.sectionInset = sectionInset
   }
-  
-  override func sizeForItem(at index: Int) -> CGSize {
-    guard let context = collectionContext,
-          let entry = entry
-    else {
-      return .zero
-    }
-    
-    let width = context.containerSize.width as CGFloat
-    let itemForEachRow: CGFloat = 4
-    let itemSize = (width - (itemForEachRow - 1) * minimumInteritemSpacing) / itemForEachRow
-    return CGSize(width: itemSize, height: itemSize)
-    
-//    if index == 0 {
-//      let itemSize = width / 4
-//      return CGSize(width: itemSize, height: itemSize)
-//    } else {
-//      return JournalEntryCell.cellSize(width: width / 3, text: entry.text)
-//    }
+
+  required init?(coder aDecoder: NSCoder) {
+      fatalError("init(coder:) has not been implemented")
   }
-  
-  override func cellForItem(at index: Int) -> UICollectionViewCell {
-    // let cellClass: AnyClass = index == 0 ? JournalEntryDateCell.self : JournalEntryCell.self
-    let cellClass: AnyClass = JournalEntryDateCell.self
-    let cell = collectionContext!.dequeueReusableCell(of: cellClass, for: self, at: index)
-    if let cell = cell as? JournalEntryDateCell {
-      cell.label.text = "SOL \(solFormatter.sols(fromDate: entry.date))"
-    } else if let cell = cell as? JournalEntryCell {
-      cell.label.text = entry.text
-    }
-    
-    return cell
+
+  override func prepare() {
+      super.prepare()
+
+      guard let collectionView = collectionView else { return }
+      let marginsAndInsets = sectionInset.left + sectionInset.right + collectionView.safeAreaInsets.left + collectionView.safeAreaInsets.right + minimumInteritemSpacing * CGFloat(cellsPerRow - 1)
+      let itemWidth = ((collectionView.bounds.size.width - marginsAndInsets) / CGFloat(cellsPerRow)).rounded(.down)
+      itemSize = CGSize(width: itemWidth, height: itemWidth)
   }
-  
-  override func didUpdate(to object: Any) {
-    entry = object as? JournalEntry
+
+  override func invalidationContext(forBoundsChange newBounds: CGRect) -> UICollectionViewLayoutInvalidationContext {
+      let context = super.invalidationContext(forBoundsChange: newBounds) as! UICollectionViewFlowLayoutInvalidationContext
+      context.invalidateFlowLayoutDelegateMetrics = newBounds.size != collectionView?.bounds.size
+      return context
   }
 }

@@ -53,6 +53,7 @@
 		8E930569290FA1C900ACFB6A /* 016.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E930555290FA1C900ACFB6A /* 016.png */; };
 		8E93056D290FA59900ACFB6A /* PokemonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E93056C290FA59900ACFB6A /* PokemonViewController.swift */; };
 		8E93056F2910D94E00ACFB6A /* PokemonSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E93056E2910D94E00ACFB6A /* PokemonSectionController.swift */; };
+		8E9305722910E5DE00ACFB6A /* PokemonFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9305712910E5DE00ACFB6A /* PokemonFlowLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +122,7 @@
 		8E930555290FA1C900ACFB6A /* 016.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 016.png; sourceTree = "<group>"; };
 		8E93056C290FA59900ACFB6A /* PokemonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonViewController.swift; sourceTree = "<group>"; };
 		8E93056E2910D94E00ACFB6A /* PokemonSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonSectionController.swift; sourceTree = "<group>"; };
+		8E9305712910E5DE00ACFB6A /* PokemonFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonFlowLayout.swift; sourceTree = "<group>"; };
 		B9EFE4AB43572E52A0685AB4 /* Pods-Marslink.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marslink.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Marslink/Pods-Marslink.debug.xcconfig"; sourceTree = "<group>"; };
 		C715FCAFBD8A3010CBEC1EE4 /* Pods_Marslink.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Marslink.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC3FA05C5618EC7BE0845CC7 /* Pods-Marslink.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marslink.release.xcconfig"; path = "Pods/Target Support Files/Pods-Marslink/Pods-Marslink.release.xcconfig"; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 		2949EE8A1D8AB4F4005BC671 /* Marslink */ = {
 			isa = PBXGroup;
 			children = (
+				8E9305702910E5A700ACFB6A /* Layouts */,
 				29E2CDB51DC7B4CF00A9E0F4 /* AppDelegate.swift */,
 				29E2CDB91DC7B4CF00A9E0F4 /* Models */,
 				29E2CDC01DC7B4CF00A9E0F4 /* Resources */,
@@ -296,6 +299,14 @@
 				8E930542290FA1BD00ACFB6A /* 020.png */,
 			);
 			path = images;
+			sourceTree = "<group>";
+		};
+		8E9305702910E5A700ACFB6A /* Layouts */ = {
+			isa = PBXGroup;
+			children = (
+				8E9305712910E5DE00ACFB6A /* PokemonFlowLayout.swift */,
+			);
+			path = Layouts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -473,6 +484,7 @@
 				29E2CDD81DC7B4CF00A9E0F4 /* AppDelegate.swift in Sources */,
 				29E2CDDD1DC7B4CF00A9E0F4 /* SolFormatter.swift in Sources */,
 				29E2CDED1DC7B4CF00A9E0F4 /* CustomNavigationBar.swift in Sources */,
+				8E9305722910E5DE00ACFB6A /* PokemonFlowLayout.swift in Sources */,
 				29E2CDDA1DC7B4CF00A9E0F4 /* DateSortable.swift in Sources */,
 				29E2CDDF1DC7B4CF00A9E0F4 /* Weather.swift in Sources */,
 				29E2CDE91DC7B4CF00A9E0F4 /* Theme.swift in Sources */,
