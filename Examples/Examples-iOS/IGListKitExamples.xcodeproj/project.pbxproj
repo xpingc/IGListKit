@@ -111,6 +111,48 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		8E93057C2910E85B00ACFB6A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8E9305732910E85B00ACFB6A /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 195AD71F7938FEA988FDCC5B0A10FFDF;
+			remoteInfo = IGListDiffKit;
+		};
+		8E93057E2910E85B00ACFB6A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8E9305732910E85B00ACFB6A /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B3C6C3E0B0FE2750FE588E0AFBA66D62;
+			remoteInfo = IGListKit;
+		};
+		8E9305802910E85B00ACFB6A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8E9305732910E85B00ACFB6A /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 643FF536DB8AD25F78D1AAB316A6E9FC;
+			remoteInfo = IGListSwiftKit;
+		};
+		8E9305822910E85B00ACFB6A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8E9305732910E85B00ACFB6A /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 486F79596A0C04EEAE074A38399E2220;
+			remoteInfo = "Pods-IGListKitExamples";
+		};
+		8E9305842910E85B00ACFB6A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8E9305732910E85B00ACFB6A /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2EA299D8E97B5BE506FA5295DB526339;
+			remoteInfo = "Pods-IGListKitMessageExample";
+		};
+		8E9305862910E85B00ACFB6A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8E9305732910E85B00ACFB6A /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7F2DFCA82DD1FA3AD307A52286041048;
+			remoteInfo = "Pods-IGListKitTodayExample";
+		};
 		95F7F9161DE5006C00A64FEE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2961B3821D68B031001C9451 /* Project object */;
@@ -233,6 +275,7 @@
 		821BC4B71DB8B48300172ED0 /* StoryboardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardCell.swift; sourceTree = "<group>"; };
 		821BC4B91DB8B61200172ED0 /* StoryboardLabelSectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardLabelSectionController.swift; sourceTree = "<group>"; };
 		82D91B681DBA0EF300E62758 /* SingleSectionStoryboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleSectionStoryboardViewController.swift; sourceTree = "<group>"; };
+		8E9305732910E85B00ACFB6A /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
 		9518E3C21DED03510008CC46 /* UITestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITestCase.swift; sourceTree = "<group>"; };
 		9518E3C41DED057E0008CC46 /* LoadMoreViewControllerUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadMoreViewControllerUITests.swift; sourceTree = "<group>"; };
 		9518E3C61DED18370008CC46 /* SearchViewControllerUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewControllerUITests.swift; sourceTree = "<group>"; };
@@ -373,6 +416,7 @@
 		2961B3811D68B031001C9451 = {
 			isa = PBXGroup;
 			children = (
+				8E9305732910E85B00ACFB6A /* Pods.xcodeproj */,
 				2961B38C1D68B031001C9451 /* IGListKitExamples */,
 				986FB7141DBBA60900A65C18 /* IGListKitMessageExample */,
 				986FB7321DBBAD8600A65C18 /* IGListKitTodayExample */,
@@ -509,6 +553,19 @@
 			);
 			name = Storyboard;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		8E9305742910E85B00ACFB6A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8E93057D2910E85B00ACFB6A /* IGListDiffKit */,
+				8E93057F2910E85B00ACFB6A /* IGListKit */,
+				8E9305812910E85B00ACFB6A /* IGListSwiftKit */,
+				8E9305832910E85B00ACFB6A /* Pods-IGListKitExamples */,
+				8E9305852910E85B00ACFB6A /* Pods-IGListKitMessageExample */,
+				8E9305872910E85B00ACFB6A /* Pods-IGListKitTodayExample */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		95F7F9121DE5006C00A64FEE /* IGListKitExamples-UITests */ = {
@@ -703,6 +760,12 @@
 			mainGroup = 2961B3811D68B031001C9451;
 			productRefGroup = 2961B38B1D68B031001C9451 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 8E9305742910E85B00ACFB6A /* Products */;
+					ProjectRef = 8E9305732910E85B00ACFB6A /* Pods.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				2961B3891D68B031001C9451 /* IGListKitExamples */,
@@ -712,6 +775,57 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		8E93057D2910E85B00ACFB6A /* IGListDiffKit */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			name = IGListDiffKit;
+			path = IGListDiffKit.framework;
+			remoteRef = 8E93057C2910E85B00ACFB6A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8E93057F2910E85B00ACFB6A /* IGListKit */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			name = IGListKit;
+			path = IGListKit.framework;
+			remoteRef = 8E93057E2910E85B00ACFB6A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8E9305812910E85B00ACFB6A /* IGListSwiftKit */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			name = IGListSwiftKit;
+			path = IGListSwiftKit.framework;
+			remoteRef = 8E9305802910E85B00ACFB6A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8E9305832910E85B00ACFB6A /* Pods-IGListKitExamples */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			name = "Pods-IGListKitExamples";
+			path = Pods_IGListKitExamples.framework;
+			remoteRef = 8E9305822910E85B00ACFB6A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8E9305852910E85B00ACFB6A /* Pods-IGListKitMessageExample */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			name = "Pods-IGListKitMessageExample";
+			path = Pods_IGListKitMessageExample.framework;
+			remoteRef = 8E9305842910E85B00ACFB6A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8E9305872910E85B00ACFB6A /* Pods-IGListKitTodayExample */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			name = "Pods-IGListKitTodayExample";
+			path = Pods_IGListKitTodayExample.framework;
+			remoteRef = 8E9305862910E85B00ACFB6A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		2961B3881D68B031001C9451 /* Resources */ = {
