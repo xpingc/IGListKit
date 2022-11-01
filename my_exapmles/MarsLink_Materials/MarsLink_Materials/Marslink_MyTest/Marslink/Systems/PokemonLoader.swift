@@ -29,13 +29,13 @@
 import Foundation
 
 class PokemonEntryLoader {
-  let countOfPokemons = 20
+  static let countOfPokemons = 20
   var pokemonList: PokemonList!
   
   func loadLatest() {
     var pokemons: [Pokemon] = []
     
-    for i in 0..<countOfPokemons {
+    for i in 0..<PokemonEntryLoader.countOfPokemons {
       pokemons.append(Pokemon(name: String(format: "%03d", i + 1)))
     }
 

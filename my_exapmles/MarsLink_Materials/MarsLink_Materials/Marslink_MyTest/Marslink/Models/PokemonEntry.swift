@@ -29,13 +29,26 @@
 import Foundation
 import UIKit
 
+class PokemonConfigs {
+  static let countOfImages = 20
+  
+  static func imageName(fromIndex: Int) -> String {
+    var imageIndex = fromIndex
+    if imageIndex <= 0 {
+      imageIndex = 1
+    }
+
+    return String(format: "%03d", (imageIndex - 1) % PokemonConfigs.countOfImages + 1)
+  }
+}
+
 class Pokemon: NSObject {
   let name: String
   let image: UIImage
   
   init(name: String) {
     self.name = name
-    self.image = UIImage(named: name,
+    self.image = UIImage(named: PokemonConfigs.imageName(fromIndex: Int(name) ?? 1),
                          in: Bundle(for: type(of:self)),
                          compatibleWith: nil)!
   }

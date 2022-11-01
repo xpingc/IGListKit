@@ -54,7 +54,7 @@ extension PokemonSectionController {
     }
     
     let width = context.containerSize.width as CGFloat
-    let itemForEachRow: CGFloat = 4
+    let itemForEachRow: CGFloat = 3
     let itemSize = (width - (itemForEachRow - 1) * minimumInteritemSpacing) / itemForEachRow
     return CGSize(width: itemSize, height: itemSize)
     
